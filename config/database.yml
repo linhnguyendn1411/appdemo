@@ -1,0 +1,20 @@
+default: &default
+  adapter: mysql2
+  pool: 5
+  username: root
+  password: linhnguyen1411
+  socket: /var/run/mysqld/mysqld.sock
+  encoding: utf8mb4
+  collation: utf8mb4_unicode_ci
+
+development:
+  <<: *default
+  database: demo_development
+
+test:
+  <<: *default
+  database: demo_test
+
+production:
+  <<: *default
+  database: demo_production
